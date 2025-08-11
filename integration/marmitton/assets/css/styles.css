@@ -11,6 +11,7 @@
  h1 {
     font-size: 5rem;
     color: #393c6c;
+    font-weight: 700;
  }
  h2, .likeH2 {
     font-size: 3rem;
@@ -30,13 +31,14 @@
  }
 /*** CLASSES ***/
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 .encart {
     border-radius:10px;
     padding: 1rem;
-    background-color: #ccc;
+    font-weight: 700;
+    background-color: rgb(138,152,177);
     display: inline-block;
     min-width: 250px;
     margin: 2rem;
