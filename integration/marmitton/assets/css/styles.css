@@ -12,12 +12,12 @@
     font-size: 5rem;
     color: #393c6c;
  }
- h2, .subtitle {
+ h2, .likeH2 {
     font-size: 3rem;
     color: #f3735f;
     margin: 7rem 0 2rem;
  }
- h3 {
+ h3, .likeH3 {
     font-size: 1.8rem;
     color: #393c6c;
  }
