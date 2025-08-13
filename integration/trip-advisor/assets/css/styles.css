@@ -1,225 +1,259 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 :root {
-    --white: #ffffff;
-    --black: #000000;
-    --orange: #ff5d5d;
-    --x-light-orange: #faf1ed;
-    --dark-grey: #333333;
-    --grey: #545454;
-    --light-grey: #e0e0e0;
-    --x-light-grey: #f2f2f2;
-    --medium-green: #35e1a1;
-    --dark-green: #04aa6c;
-    --lg-icon: 24px;
-    --med-icon: 22px;
-    --sm-icon: 20px;
-    --xsm-icon: 15px;
-    --xxsm-icon: 14px;
-    --trip-reg: "TS-Reg",Arial,Helvetica,sans-serif;
-    --trip-med: "TS-Med",Arial,Helvetica,sans-serif;
-    --trip-vf-original: "Trip Sans VF",var(--trip-med);
-    --georgia: Georgia,"Times New Roman",Times,serif
+  --white: #ffffff;
+  --black: #000000;
+  --orange: #ff5d5d;
+  --x-light-orange: #faf1ed;
+  --dark-grey: #333333;
+  --grey: #545454;
+  --light-grey: #e0e0e0;
+  --x-light-grey: #f2f2f2;
+  --medium-green: #35e1a1;
+  --dark-green: #04aa6c;
+  --lg-icon: 24px;
+  --med-icon: 22px;
+  --sm-icon: 20px;
+  --xsm-icon: 15px;
+  --xxsm-icon: 14px;
+  --trip-reg: "TS-Reg", Arial, Helvetica, sans-serif;
+  --trip-med: "TS-Med", Arial, Helvetica, sans-serif;
+  --trip-vf-original: "Trip Sans VF", var(--trip-med);
+  --georgia: Georgia, "Times New Roman", Times, serif;
 }
-html { font-size: 62.5%; }
+html {
+  font-size: 62.5%;
+}
 body {
-    margin: 0;
-    font-family: TS-Reg, sans-serif;
-    line-height: 1.5;
-    font-size: 1.6rem;
+  margin: 0;
+  font-family: TS-Reg, sans-serif;
+  line-height: 1.5;
+  font-size: 1.6rem;
 }
-h1, h2 {
-    font-family: var(--trip-vf-original);
-    font-size: 5.4rem;
-    margin: 2rem 0;
+h1,
+h2 {
+  font-family: var(--trip-vf-original);
+  font-size: 5.4rem;
+  margin: 2rem 0;
 }
 h2 {
-    font-size: 3.2rem;
-    margin: 1.8rem 0;
-    letter-spacing: 0.1rem;
-    font-weight: 500;
+  font-size: 3.2rem;
+  margin: 1.8rem 0;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
 }
 h3 {
-    margin: 1.6rem 0;
+  margin: 1.6rem 0;
 }
-p{
-    margin: 1rem 0;
+p {
+  margin: 1rem 0;
 }
-a { 
-    text-decoration: none;
-    color: var(--black);
+a {
+  text-decoration: none;
+  color: var(--black);
 }
-img, iframe {
-    max-width: 100%;
+img,
+iframe {
+  max-width: 100%;
 }
 figure img {
-    display: block;
-    object-fit: cover;
+  display: block;
+  object-fit: cover;
 }
 /*** CLASSES ***/
 .flexContainer {
-    display: flex;
+  display: flex;
 }
 .innerContainer {
-    max-width: 1280px;
-    margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .btn {
-    display: inline-block;
-    border-radius: 20px;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 20px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1rem 2rem;
 }
 .content {
-    color: var(--dark-grey);
-    line-height: 1.8;
-    margin-top: 1.5rem;
-    font-size: 2rem;
-    margin-right: 6rem;
+  color: var(--dark-grey);
+  line-height: 1.8;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  margin-right: 6rem;
 }
 /*** Header ***/
 header {
-    position: fixed;
-    z-index: 10;
-    padding: 1.5rem;
-    width: 100%;
-    top:0;
-    left: 0;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--light-grey);
+  position: fixed;
+  z-index: 10;
+  padding: 1.5rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--light-grey);
 }
 header .logo {
-    margin-right: auto;
-    max-height: 40px;
+  margin-right: auto;
+  max-height: 40px;
 }
 header > .innerContainer.flexContainer {
-    align-items: center;
+  align-items: center;
 }
 /** nav **/
 nav ul {
-    padding: 0;
-    list-style: none;
-    gap: 0.5rem;
-    align-items: center;
-    margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0;
 }
 header nav li a {
-    font-weight: 700;
-    padding: 1rem;
-    transition: all 0.5s ease;
+  font-weight: 700;
+  padding: 1rem;
+  transition: all 0.5s ease;
 }
 header nav li i {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 header nav li a:hover {
-    background-color: var(--light-grey);
-    border-radius: 20px;
-    color:var(--black);
+  background-color: var(--light-grey);
+  border-radius: 20px;
+  color: var(--black);
 }
 /*** main ***/
 main {
-    margin-top: 90px;
+  margin-top: 90px;
 }
 /*** explore ***/
 #explore h1 {
-    margin-bottom: 0;
-    line-height: 1.2;
+  margin-bottom: 0;
+  line-height: 1.2;
 }
 #explore h1 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 #explore p {
-    margin-top: 0;
+  margin-top: 0;
 }
 #explore nav ul {
-    align-items: stretch;
-    margin: 3rem 0;
+  align-items: stretch;
+  margin: 3rem 0;
 }
 #explore li {
-    border: 1px solid var(--dark-grey);
-    border-radius: 10px;
-    font-weight: bold;
-    flex: 1;
+  border: 1px solid var(--dark-grey);
+  border-radius: 10px;
+  font-weight: bold;
+  flex: 1;
 }
 #explore li a {
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    flex: 1;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  flex: 1;
 }
 #explore li:hover {
-    background-color: var(--black);
-    transition: 0.5s ease;
+  background-color: var(--black);
+  transition: 0.5s ease;
 }
 
 #explore li:hover a {
-    color: var(--white);
+  color: var(--white);
 }
 /** gallery **/
 #explore .galleryGrid {
-    gap: 0.5rem;
-    height: 430px;
+  gap: 0.5rem;
+  height: 430px;
 }
 #explore .galleryGrid > div {
-    flex: 1;
+  flex: 1;
 }
 #explore .galleryGrid figure {
-    margin: 0;
-    flex: 1;
-    overflow: hidden;
+  margin: 0;
+  flex: 1;
+  overflow: hidden;
 }
-#explore  .galleryGrid figure img { 
-    height: 100%;
-    width: 100%;
-    transition: 0.6s ease;
+#explore .galleryGrid figure img {
+  height: 100%;
+  width: 100%;
+  transition: 0.6s ease;
 }
-#explore  .galleryGrid figure img:hover {
-    opacity: 0.7;
-    transform: scale(1.05);
-    transition: 0.5s ease;
+#explore .galleryGrid figure img:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+  transition: 0.5s ease;
 }
 #explore .galleryGrid .col1 {
-    position: relative;
-    flex-basis: 60%;
+  position: relative;
+  flex-basis: 60%;
 }
 #explore .galleryGrid .btn {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 #explore .galleryGrid .col1 i {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 #explore .galleryGrid .col2 {
-    flex-basis: 40%;
-    flex-direction: column;
+  flex-basis: 40%;
+  flex-direction: column;
 }
 #explore .galleryGrid .col2 figure {
-    height: 50%;
+  height: 50%;
 }
 #explore .galleryGrid .col2 figure:last-child {
-    padding-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+/** breadcrumb **/
+.breadcrumb {
+  padding: 2rem 0;
+}
+.breadcrumb span:last-child {
+  margin-left: auto;
+}
+.breadcrumb span::before {
+  content: ">";
+  display: inline-block;
+  margin: 0 1rem;
+}
+.breadcrumb span:last-child::before,
+.breadcrumb span:first-child::before {
+  content: "";
+  margin: 0;
+}
+.breadcrumb span:nth-last-child(2)::after {
+    content: "";
+    display: inline-block;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-left: 10px;
+    position: relative;
+    top: 2px;
 }
 /*** discover ***/
 section#discover {
-    gap: 10rem;
+  gap: 10rem;
 }
 section#discover article:first-child {
-    flex-basis: 60%;
+  flex-basis: 60%;
 }
 section#discover article:last-child {
-    flex-basis: 40%;
+  flex-basis: 40%;
 }
 section#discover article:last-child div {
-    background-color: var(--orange);
-    padding: 1rem 4rem 4rem;
-    border-radius: 20px 20px 0 0;
+  background-color: var(--orange);
+  padding: 1rem 4rem 4rem;
+  border-radius: 20px 20px 0 0;
 }
 section#discover article:last-child figure {
-    margin: 0;
+  margin: 0;
 }
 section#discover .btn {
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
 }
 /*** footer ***/
