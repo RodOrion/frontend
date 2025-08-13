@@ -126,7 +126,7 @@ header nav li a:hover {
 main {
   margin-top: 90px;
 }
-/*** explore ***/
+/*** EXPLORE ***/
 #explore h1 {
   margin-bottom: 0;
   line-height: 1.2;
@@ -165,9 +165,6 @@ main {
   gap: 0.5rem;
   height: 430px;
 }
-#explore .galleryGrid > div {
-  flex: 1;
-}
 #explore .galleryGrid figure {
   margin: 0;
   flex: 1;
@@ -197,7 +194,6 @@ main {
 }
 #explore .galleryGrid .col2 {
   flex-basis: 40%;
-  flex-direction: column;
 }
 #explore .galleryGrid .col2 figure {
   height: 50%;
@@ -233,7 +229,7 @@ main {
     position: relative;
     top: 2px;
 }
-/*** discover ***/
+/*** DISCOVER ***/
 section#discover {
   gap: 10rem;
 }
@@ -255,5 +251,24 @@ section#discover .btn {
   padding: 2rem;
   border-radius: 15px;
   margin-top: 2rem;
+}
+/*** ESSENTIALS ***/
+#essentials > div.flexContainer > div {
+    min-width: 225px;
+}
+#essentials figure {
+    margin: 0;
+    position: relative;
+}
+#essentials .circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top:10px;
+    right: 10px;
+    background-color: var(--white);
+    text-align: center;
+    line-height: 32px;
 }
 /*** footer ***/
