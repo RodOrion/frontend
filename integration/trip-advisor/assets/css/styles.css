@@ -335,9 +335,6 @@ section#essentials h2 {
   flex-wrap: nowrap;
   flex-direction: column;
 }
-#essentials > div.flexContainer > div:first-child {
-
-}
 #essentials > div.flexContainer > div:first-child h3 {
   font-size: 2.6rem;
   font-weight: 600;
