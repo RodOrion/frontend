@@ -12,15 +12,13 @@
   --x-light-grey: #f2f2f2;
   --medium-green: #35e1a1;
   --dark-green: #04aa6c;
-  --lg-icon: 24px;
-  --med-icon: 22px;
-  --sm-icon: 20px;
-  --xsm-icon: 15px;
-  --xxsm-icon: 14px;
+  --lg-icon: 2.4rem;
+  --med-icon: 2.2rem;
+  --sm-icon: 2rem;
+  --xsm-icon: 1.5rem;
   --trip-reg: "TS-Reg", Arial, Helvetica, sans-serif;
   --trip-med: "TS-Med", Arial, Helvetica, sans-serif;
   --trip-vf-original: "Trip Sans VF", var(--trip-med);
-  --georgia: Georgia, "Times New Roman", Times, serif;
 }
 html {
   font-size: 62.5%;
@@ -60,10 +58,19 @@ iframe {
 }
 figure {
   margin: 0;
+  overflow: hidden;
 }
 figure img {
   display: block;
   object-fit: cover;
+  object-position: center;
+}
+nav ul {
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0;
 }
 /*** CLASSES ***/
 .flexContainer {
@@ -100,27 +107,55 @@ header {
   border-bottom: 1px solid var(--light-grey);
 }
 header .logo {
-  margin-right: auto;
   max-height: 40px;
+  position: relative;
+  z-index: 10;
 }
 header > .innerContainer.flexContainer {
   align-items: center;
+  justify-content: space-between;
 }
 /** nav **/
-nav ul {
-  padding: 0;
-  list-style: none;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 0;
+header nav {
+  order: -1;
 }
 header nav ul.flexContainer {
-    display: none;
+  /* display: none; */
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 2rem;
+  padding: 20px;
+  justify-content: center;
+  transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+  align-items: stretch;
+}
+header nav ul.flexContainer.active {
+  visibility: visible;
+  opacity: 1;
+  background-color: var(--x-light-orange);
+}
+header nav li {
+  text-align: center;
+  margin: 0.5rem 0;
 }
 header nav li a {
   font-weight: 700;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+  display: block;
   transition: all 0.5s ease;
+}
+header nav li:has(.btn) {
+  order: -1;
+}
+header nav li a.btn {
+  display: block;
 }
 header nav li i {
   margin-right: 0.5rem;
@@ -130,52 +165,80 @@ header nav li a:hover {
   border-radius: 20px;
   color: var(--black);
 }
+.smartMenu {
+  display: flex;
+  font-size: var(--lg-icon);
+  gap: 10px;
+  position: relative;
+  z-index: 10;
+}
 /** burger **/
 label#burger {
- display:flex;
-  flex-direction:column;
-  width:50px;
-  cursor:pointer;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
-label#burger span{
+label#burger span {
   background: var(--dark-grey);
-  border-radius:10px;
+  border-radius: 10px;
   height: 4px;
   margin: 4px 0;
-  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
-label#burger span:nth-of-type(1){
-  width:50%;
+label#burger span:nth-of-type(1) {
+  width: 50%;
 }
-label#burger span:nth-of-type(2){
-  width:100%;
+label#burger span:nth-of-type(2) {
+  width: 100%;
 }
-label#burger span:nth-of-type(3){
-  width:75%;
+label#burger span:nth-of-type(3) {
+  width: 75%;
 }
-label#burger input[type="checkbox"]{
-  display:none;
+label#burger input[type="checkbox"] {
+  display: none;
 }
-label#burger input[type="checkbox"]:checked ~ span:nth-of-type(1){
-  transform-origin:bottom;
-  transform:rotatez(45deg) translate(6px,-2px)
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(6px, -2px);
 }
-label#burger input[type="checkbox"]:checked ~ span:nth-of-type(2){
-  transform-origin:top;
-  transform:rotatez(-45deg)
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
 }
-label#burger input[type="checkbox"]:checked ~ span:nth-of-type(3){
-  transform-origin:bottom;
-  width:50%;
-  transform: translate(24px,-4px) rotatez(45deg);
-
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(24px, -4px) rotatez(45deg);
 }
-@media (min-width:795px) {
+@media (min-width: 795px) {
+  header nav {
+    order: 0;
+  }
   header nav ul.flexContainer {
-      display: flex;
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    width: auto;
+    flex-direction: row;
+    background-color: var(--white);
+    height: auto;
+    margin-top: 0;
+    padding: 0;
   }
   label#burger {
     display: none;
+  }
+  header nav li a {
+    padding: 1rem;
+  }
+  .smartMenu {
+    display: none;
+  }
+  header nav li:has(.btn) {
+    order: 0;
   }
 }
 /*** main ***/
@@ -216,6 +279,9 @@ main {
 #explore li:hover a {
   color: var(--white);
 }
+#explore nav i {
+  font-size: var(--lg-icon);
+}
 @media (min-width: 780px) {
   #explore li {
     flex: 1 1 calc(33.33% - 1rem);
@@ -253,6 +319,11 @@ main {
   position: absolute;
   bottom: 20px;
   left: 20px;
+  transition: .5s ease-out;
+}
+#explore .galleryGrid .btn:hover {
+    color: var(--black);
+    background-color: var(--white);
 }
 #explore .galleryGrid .col1 i {
   margin-right: 0.5rem;
@@ -313,6 +384,11 @@ section#discover .btn {
   padding: 2rem;
   border-radius: 15px;
   margin-top: 2rem;
+  transition: .5s ease-out;
+}
+section#discover .btn:hover {
+    color: var(--black);
+    background-color: var(--white);
 }
 @media (min-width: 780px) {
   section#discover article:first-child {
@@ -352,7 +428,7 @@ section#essentials h2 {
   transition: 0.5s ease;
 }
 #essentials > div.flexContainer > div:last-child article {
-  flex: 0 0 calc((100% - 20px) / 3);
+  flex: 0 0 calc(100% - 20px);
 }
 #essentials figure {
   position: relative;
@@ -388,7 +464,7 @@ section#essentials h2 {
 #essentials div.caroussel h3 {
   margin: 0.6rem 0 0.3rem;
 }
-@media (min-width:780px) {
+@media (min-width: 780px) {
   #essentials > div.flexContainer {
     flex-direction: row;
   }
@@ -397,18 +473,32 @@ section#essentials h2 {
     margin-right: 2rem;
     margin-top: 60px;
   }
+  #essentials > div.flexContainer > div:last-child article {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  #essentials > div.flexContainer > div:last-child article {
+    flex: 0 0 calc((100% - 20px) / 3);
+  }
 }
 /** ratings **/
 #essentials .rating {
-  width: 70%;
+  width: 30%;
+  max-width: 140px;
   gap: 5px;
 }
 #essentials .rating svg#rating-clippath {
   width: calc(100% - 60px);
 }
-@media (min-width:780px) {
+@media (min-width: 780px) {
   #essentials .rating {
-    width: 40%;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  #essentials .rating {
+    width: 45%;
   }
 }
 /*** caroussel ***/
@@ -450,6 +540,22 @@ section#guide {
 #guide figure img {
   height: 400px;
   width: 100%;
+  transition: .3s ease-out;
+}
+#guide figure:hover img {
+    transform: scale(1.05);
+}
+#guide article h3 {
+  margin-bottom: 0;
+}
+#guide article h3 + div {
+  margin: 0.5rem 0;
+}
+#guide .credit img {
+  height: 24px;
+  margin-right: 6px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 @media (min-width: 780px) {
   #guide article {
@@ -461,4 +567,13 @@ footer {
   background-color: var(--x-light-orange);
   text-align: center;
   padding: 6rem 2rem;
+}
+footer p img {
+  height: 35px;
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: 0.5s ease;
+}
+footer p img:hover {
+  transform: rotate(180deg);
 }
