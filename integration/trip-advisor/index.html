@@ -21,6 +21,12 @@
           srcset=""
         />
         <nav>
+          <label id="burger" for="check">
+            <input type="checkbox" id="check"/> 
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
           <ul class="flexContainer">
             <li>
               <a href=""><i class="fa-regular fa-pen-to-square"></i>Avis</a>
@@ -52,34 +58,35 @@
             <ul class="flexContainer">
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Hôtels<i class="fa-solid fa-bed"></i
+                  ><span>Hôtels</span><i class="fa-solid fa-bed"></i
                 ></a>
               </li>
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Locations de vacances<i
-                    class="fa-solid fa-house-circle-check"
-                  ></i
+                  ><span>Locations de<br />vacances</span
+                  ><i class="fa-solid fa-house-circle-check"></i
                 ></a>
               </li>
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Activités<i class="fa-solid fa-ticket-simple"></i
+                  ><span>Activités</span
+                  ><i class="fa-solid fa-ticket-simple"></i
                 ></a>
               </li>
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Restaurants<i class="fa-solid fa-utensils"></i
+                  ><span>Restaurants</span><i class="fa-solid fa-utensils"></i
                 ></a>
               </li>
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Forums de voyage<i class="fa-solid fa-bullhorn"></i
+                  ><span>Forums de<br />voyage</span
+                  ><i class="fa-solid fa-bullhorn"></i
                 ></a>
               </li>
               <li class="flexContainer">
                 <a class="flexContainer" href=""
-                  >Plus<i class="fa-solid fa-file-circle-plus"></i
+                  ><span>Plus</span><i class="fa-solid fa-file-circle-plus"></i
                 ></a>
               </li>
             </ul>
@@ -93,7 +100,7 @@
                 </a>
               </figure>
             </div>
-            <div class="col2">
+            <div class="col2 flexContainer">
               <figure><img src="assets/img/caption-8.jpg" alt="" /></figure>
               <figure><img src="assets/img/caption-9.jpg" alt="" /></figure>
             </div>
@@ -143,35 +150,315 @@
               </p>
               <a href="">Tout afficher</a>
             </div>
-            <article>
-              <figure>
-                <img src="assets/img/eiffeltoren.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>Tour Eiffel</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>
-                Tours et plateformes d'observation, Monuments & Points d'intérêt
-              </p>
-            </article>
-            <article>
-              <figure>
-                <img src="assets/img/arc-de-triomphe-at-night.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>Arc de Triomphe</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>Bâtiments architecturaux, Sites historiques</p>
-            </article>
-            <article>
-              <figure>
-                <img src="assets/img/louvre.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>Musée du Louvre</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>Bâtiments architecturaux, Musées d'art</p>
-            </article>
+            <div class="caroussel first">
+              <div class="flexContainer rack">
+                <article>
+                  <figure>
+                    <img src="assets/img/eiffeltoren.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Tour Eiffel</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="90%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>139 901</span>
+                  </div>
+                  <p>
+                    Tours et plateformes d'observation, Monuments & Points
+                    d'intérêt
+                  </p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/arc-de-triomphe-at-night.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Arc de Triomphe</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>56 987</span>
+                  </div>
+                  <p>Bâtiments architecturaux, Sites historiques</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/louvre.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Musée du Louvre</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="60%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>100 845</span>
+                  </div>
+                  <p>Bâtiments architecturaux, Musées d'art</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/vue-de-la-cour-d-honneur.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Musée Rodin</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="50%"
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>187 981</span>
+                  </div>
+                  <p>Musées spécialisés</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/the-amazingly-detailed.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Cathédrale Notre-Dame de Paris</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>139 901</span>
+                  </div>
+                  <p>Bâtiments architecturaux, Sites historiques</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/the-bookstore.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Librairie Shakespear and Company</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>140 321</span>
+                  </div>
+                  <p>Bibliothèques, Grands magasins</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/20180601-122841-largejpg.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Musée d'Orsay</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>67 761</span>
+                  </div>
+                  <p>Musées d'art</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/marche-vernaison-maison.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Marché aux Puces de Saint-Ouen</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>103 495</span>
+                  </div>
+                  <p>
+                    Antiquaires, Marchés aux puces & Marchés de rue
+                    Saint-Ouen,
+                    France À 5,4 kilomètres de Paris
+                  </p>
+                </article>
+              </div>
+              <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+              <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
           </div>
           <div class="flexContainer">
             <div>
@@ -179,37 +466,399 @@
               <p>Bistrots et bars typiques, et plus encore à Paris.</p>
               <a href="">Tout afficher</a>
             </div>
+            <div class="caroussel second">
+              <div class="flexContainer rack">
+                <article>
+                  <figure>
+                    <img src="assets/img/meal6.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Frenchie</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>1 297</span>
+                  </div>
+                  <p>
+                    €€€€ · Française, Végétariens bienvenus, Plats sans gluten
+                  </p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/meal5.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>114 Faubourg</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="50%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>1 754</span>
+                  </div>
+                  <p>€€ · Française, Européenne, Végétariens bienvenus</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/meal4.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Verjus</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="30%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>545</span>
+                  </div>
+                  <p>€€€ · Française, Européenne, Moderne</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/meal3.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>ASPIC</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="80%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>2981</span>
+                  </div>
+                  <p>
+                    €€€€ · Française, Européenne, Saine
+                  </p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/meal2.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Bistrot chic</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="50%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>1 345</span>
+                  </div>
+                  <p>€€€ · Française, Européenne, Saine, Moderne</p>
+                </article>
+                <article>
+                  <figure>
+                    <img src="assets/img/meal1.jpg" alt="" />
+                    <div class="circle"><i class="fa-regular fa-heart"></i></div>
+                  </figure>
+                  <h3>Vive les huîtres</h3>
+                  <div class="rating flexContainer">
+                    <svg viewBox="0 0 40 8" id="rating-clippath">
+                        <defs>
+                            <clipPath id="circles">
+                                <circle cx="4" cy="4" r="3"/>
+                                <circle cx="12" cy="4" r="3"/>
+                                <circle cx="20" cy="4" r="3"/>
+                                <circle cx="28" cy="4" r="3"/>
+                                <circle cx="36" cy="4" r="3"/>
+                            </clipPath>
+                        </defs>
+                        <!-- Cercles de fond -->
+                        <circle cx="4" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="12" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="20" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="28" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        <circle cx="36" cy="4" r="3" fill="#eee" stroke="var(--dark-green)" stroke-width="1"/>
+                        
+                        <!-- Rectangle coloré clippé par les cercles -->
+                        <rect id="fill-rect-clip" 
+                              x="0" 
+                              y="0" 
+                              width="30%" 
+                              height="7" 
+                              fill= "var(--dark-green)" 
+                              clip-path="url(#circles)"/>
+                    </svg>
+                    <span>4 340</span>
+                  </div>
+                  <p>€€€€ · Française, Moderne, Bar à vins</p>
+                </article>
+              </div>
+              <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+              <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+          </div>
+        </section>
+        <section id="guide">
+          <h2>Guides de voyageurs</h2>
+          <div class="flexContainer">
             <article>
-              <figure>
-                <img src="assets/img/eiffeltoren.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>Frenchie</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>€€€€ · Française, Végétariens bienvenus, Plats sans gluten</p>
+              <figure><img src="assets/img/visit1.jpg" alt=""></figure>
+              <h3>Best summer things to do in Paris | Eatwith</h3>
+              <div>36 articles</div>
+              <div class="credit"><span>Par Eatwith</span></div>
             </article>
             <article>
-              <figure>
-                <img src="assets/img/arc-de-triomphe-at-night.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>114 Faubourg</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>€€ · Française, Européenne, Végétariens bienvenus</p>
+              <figure><img src="assets/img/visit2.jpg" alt=""></figure>
+              <h3>Les 10 monuments et musées de Paris à faire</h3>
+              <div>10 articles</div>
+              <div class="credit"><span>Par Topito</span></div>
             </article>
             <article>
-              <figure>
-                <img src="assets/img/louvre.jpg" alt="" />
-                <div class="circle"><i class="fa-regular fa-heart"></i></div>
-              </figure>
-              <h3>Verjus</h3>
-              <div class="rating"><i></i><i></i><i></i><i></i><i></i></div>
-              <p>€€€ · Française, Européenne, Moderne</p>
+              <figure><img src="assets/img/visit3.jpg" alt=""></figure>
+              <h3>Top 10 des choses à faire ou à voir dans le 14ème</h3>
+              <div>10 articles</div>
+              <div class="credit"><span>Par Topito</span></div>
             </article>
           </div>
         </section>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <p>Made at Le Reacteur by Marty McFly</p>
+    </footer>
+    <script>
+      /*** heart ***/
+      let circlesLike = document.querySelectorAll('#essentials .circle')
+      circlesLike.forEach( (e) => {
+        e.addEventListener("click", () => {
+          e.classList.toggle("active");
+        })
+      })
+
+      /** caroussel **/
+      let next = document.querySelectorAll("#essentials .next");
+      let prev = document.querySelectorAll("#essentials .prev");
+      let caroussel = document.querySelector("#essentials .rack");
+      let slidesFirstCaroussel = document.querySelectorAll("#essentials .caroussel.first .rack article").length;
+      let slidesSecondCaroussel = document.querySelectorAll("#essentials .caroussel.second .rack article").length;
+      let slideWidth =  document.querySelector("#essentials .rack article").clientWidth + 10;
+      
+      const carouselConfig = {
+        first: {
+          currentIndex: 0,
+          maxSlides: slidesFirstCaroussel - 3
+        },
+        second: {
+          currentIndex: 0,
+          maxSlides: slidesSecondCaroussel - 3
+        }
+      };
+
+      const moveToSlide = (caroussel, index) => {
+        caroussel.style.transform = `translateX(${-index*slideWidth}px)`
+      }
+
+      // Fonction générique pour gérer la navigation
+      function handleCarouselNavigation(button, direction) {
+        // Déterminer quel carrousel
+        const carouselClasses = button.parentElement.className.split(" ");
+        const carouselType = carouselClasses.includes("first") ? "first" : "second";
+        const config = carouselConfig[carouselType];
+        
+        // Calculer le nouvel index
+        const newIndex = config.currentIndex + direction;
+        
+        // Vérifier les limites
+        const canMove = (direction > 0) 
+          ? newIndex <= config.maxSlides 
+          : newIndex >= 0;
+        
+        if (canMove) {
+          // Déplacer le carrousel
+          config.currentIndex = newIndex;
+          const rack = button.parentElement.children[0]; // ou firstElementChild
+          moveToSlide(rack, config.currentIndex);
+          
+          // Gérer l'état disabled
+          button.classList.remove('disabled');
+        } else {
+          button.classList.add('disabled');
+        }
+        
+        // Optionnel : gérer l'état du bouton opposé
+        updateOppositeButton(button, carouselType, config);
+      }
+
+      // Fonction pour mettre à jour l'état du bouton opposé
+      function updateOppositeButton(currentButton, carouselType, config) {
+        const parent = currentButton.parentElement;
+        const isNext = currentButton.classList.contains('next'); // ou autre classe
+        const oppositeButton = isNext 
+          ? parent.querySelector('.prev') 
+          : parent.querySelector('.next');
+        
+        if (oppositeButton) {
+          // Réactiver le bouton opposé si on n'est plus aux limites
+          if (isNext && config.currentIndex > 0) {
+            oppositeButton.classList.remove('disabled');
+          } else if (!isNext && config.currentIndex < config.maxSlides) {
+            oppositeButton.classList.remove('disabled');
+          }
+        }
+      }
+
+      // Event listeners
+      next.forEach((n) => {
+        n.addEventListener('click', () => {
+          handleCarouselNavigation(n, 1); // +1 pour next
+        });
+      });
+
+      prev.forEach((p) => {
+        p.addEventListener('click', () => {
+          handleCarouselNavigation(p, -1); // -1 pour prev
+        });
+      });
+
+      // // détection du clic
+      // next.forEach( (n) => {
+      //   n.addEventListener('click', () => {
+      //       caroussel = n.parentElement.className.split(" ");
+      //       if(caroussel.includes("first")){
+      //         if(currentIndexFirst < slidesFirstCaroussel - 3) {
+      //           n.classList.remove('disabled')
+      //           currentIndexFirst++;
+      //           moveToSlide(n.parentElement.children[0], currentIndexFirst);
+      //         } else {
+      //           n.classList.add('disabled')
+      //         }
+      //       } else {
+      //         if(currentIndexSecond < slidesSecondCaroussel - 3) {
+      //           n.classList.remove('disabled')
+      //           currentIndexSecond++;
+      //           moveToSlide(n.parentElement.children[0], currentIndexSecond);
+      //         } else {
+      //           n.classList.add('disabled')
+      //         }
+      //       }
+            
+      //   });
+      // })
+
+      // prev.forEach( (n) => {
+      //   n.addEventListener('click', () => {
+      //       if(currentIndex > 0) {
+      //         prev.classList.remove('disabled')
+      //         currentIndex--;
+      //         moveToSlide(currentIndex);
+      //       } else {
+      //         prev.classList.add('disabled')
+      //       }
+      //   });
+      // })
+
+    </script>
   </body>
 </html>

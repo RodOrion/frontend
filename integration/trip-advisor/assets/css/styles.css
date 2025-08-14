@@ -41,10 +41,11 @@ h2 {
   font-size: 3.2rem;
   margin: 1.8rem 0;
   letter-spacing: 0.1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 h3 {
   margin: 1.6rem 0;
+  font-weight: 600;
 }
 p {
   margin: 1rem 0;
@@ -57,6 +58,9 @@ img,
 iframe {
   max-width: 100%;
 }
+figure {
+  margin: 0;
+}
 figure img {
   display: block;
   object-fit: cover;
@@ -64,6 +68,7 @@ figure img {
 /*** CLASSES ***/
 .flexContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 .innerContainer {
   max-width: 1280px;
@@ -85,7 +90,7 @@ figure img {
 }
 /*** Header ***/
 header {
-  position: fixed;
+  position: sticky;
   z-index: 10;
   padding: 1.5rem;
   width: 100%;
@@ -109,6 +114,9 @@ nav ul {
   align-items: center;
   margin: 0;
 }
+header nav ul.flexContainer {
+    display: none;
+}
 header nav li a {
   font-weight: 700;
   padding: 1rem;
@@ -122,9 +130,57 @@ header nav li a:hover {
   border-radius: 20px;
   color: var(--black);
 }
+/** burger **/
+label#burger {
+ display:flex;
+  flex-direction:column;
+  width:50px;
+  cursor:pointer;
+}
+label#burger span{
+  background: var(--dark-grey);
+  border-radius:10px;
+  height: 4px;
+  margin: 4px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+label#burger span:nth-of-type(1){
+  width:50%;
+}
+label#burger span:nth-of-type(2){
+  width:100%;
+}
+label#burger span:nth-of-type(3){
+  width:75%;
+}
+label#burger input[type="checkbox"]{
+  display:none;
+}
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(6px,-2px)
+}
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  transform-origin:top;
+  transform:rotatez(-45deg)
+}
+label#burger input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(24px,-4px) rotatez(45deg);
+
+}
+@media (min-width:795px) {
+  header nav ul.flexContainer {
+      display: flex;
+  }
+  label#burger {
+    display: none;
+  }
+}
 /*** main ***/
 main {
-  margin-top: 90px;
+  margin: 0 2rem;
 }
 /*** EXPLORE ***/
 #explore h1 {
@@ -145,7 +201,8 @@ main {
   border: 1px solid var(--dark-grey);
   border-radius: 10px;
   font-weight: bold;
-  flex: 1;
+  flex: 1 1 calc(50% - 1rem);
+  min-height: 68px;
 }
 #explore li a {
   justify-content: space-between;
@@ -156,17 +213,25 @@ main {
   background-color: var(--black);
   transition: 0.5s ease;
 }
-
 #explore li:hover a {
   color: var(--white);
+}
+@media (min-width: 780px) {
+  #explore li {
+    flex: 1 1 calc(33.33% - 1rem);
+  }
+}
+@media (min-width: 1024px) {
+  #explore li {
+    flex-basis: 0;
+  }
 }
 /** gallery **/
 #explore .galleryGrid {
   gap: 0.5rem;
-  height: 430px;
+  flex-direction: column;
 }
 #explore .galleryGrid figure {
-  margin: 0;
   flex: 1;
   overflow: hidden;
 }
@@ -181,8 +246,8 @@ main {
   transition: 0.5s ease;
 }
 #explore .galleryGrid .col1 {
+  flex-basis: calc(60% - 5px);
   position: relative;
-  flex-basis: 60%;
 }
 #explore .galleryGrid .btn {
   position: absolute;
@@ -194,12 +259,15 @@ main {
 }
 #explore .galleryGrid .col2 {
   flex-basis: 40%;
+  gap: 0.5rem;
 }
-#explore .galleryGrid .col2 figure {
-  height: 50%;
-}
-#explore .galleryGrid .col2 figure:last-child {
-  padding-top: 0.5rem;
+@media (min-width: 780px) {
+  #explore .galleryGrid {
+    flex-direction: row;
+  }
+  #explore .galleryGrid .col2 {
+    flex-direction: column;
+  }
 }
 /** breadcrumb **/
 .breadcrumb {
@@ -219,56 +287,181 @@ main {
   margin: 0;
 }
 .breadcrumb span:nth-last-child(2)::after {
-    content: "";
-    display: inline-block;
-    border-top: 5px solid #000;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    margin-left: 10px;
-    position: relative;
-    top: 2px;
+  content: "";
+  display: inline-block;
+  border-top: 5px solid #000;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
 }
 /*** DISCOVER ***/
 section#discover {
-  gap: 10rem;
+  gap: 5rem;
 }
-section#discover article:first-child {
-  flex-basis: 60%;
-}
-section#discover article:last-child {
-  flex-basis: 40%;
+section#discover article {
+  flex: 1 1 100%;
 }
 section#discover article:last-child div {
   background-color: var(--orange);
   padding: 1rem 4rem 4rem;
   border-radius: 20px 20px 0 0;
 }
-section#discover article:last-child figure {
-  margin: 0;
-}
 section#discover .btn {
   padding: 2rem;
   border-radius: 15px;
   margin-top: 2rem;
 }
+@media (min-width: 780px) {
+  section#discover article:first-child {
+    flex-basis: calc(60% - 10rem);
+  }
+  section#discover article:last-child {
+    flex-basis: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  section#discover {
+    gap: 10rem;
+  }
+}
 /*** ESSENTIALS ***/
-#essentials > div.flexContainer > div {
-    min-width: 225px;
+section#essentials h2 {
+  margin: 4rem 0 0;
+}
+#essentials > div.flexContainer {
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+#essentials > div.flexContainer > div:first-child {
+
+}
+#essentials > div.flexContainer > div:first-child h3 {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+#essentials div.caroussel {
+  flex: 1;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  position: relative;
+  padding: 60px 40px 40px 0;
+}
+#essentials div.caroussel > div.rack {
+  flex-wrap: nowrap;
+  gap: 10px;
+  transition: 0.5s ease;
+}
+#essentials > div.flexContainer > div:last-child article {
+  flex: 0 0 calc((100% - 20px) / 3);
 }
 #essentials figure {
-    margin: 0;
-    position: relative;
+  position: relative;
+  overflow: hidden;
+}
+#essentials .caroussel figure img {
+  height: 220px;
+  width: 100%;
+  transition: 0.5s ease;
+}
+#essentials .caroussel figure img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 #essentials .circle {
-    position: absolute;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    top:10px;
-    right: 10px;
-    background-color: var(--white);
-    text-align: center;
-    line-height: 32px;
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 10px;
+  background-color: var(--white);
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+}
+#essentials .circle.active {
+  background-color: var(--orange);
+}
+#essentials .circle.active i {
+  color: var(--white);
+}
+#essentials div.caroussel h3 {
+  margin: 0.6rem 0 0.3rem;
+}
+@media (min-width:780px) {
+  #essentials > div.flexContainer {
+    flex-direction: row;
+  }
+  #essentials > div.flexContainer > div:first-child {
+    flex-basis: 240px;
+    margin-right: 2rem;
+    margin-top: 60px;
+  }
+}
+/** ratings **/
+#essentials .rating {
+  width: 70%;
+  gap: 5px;
+}
+#essentials .rating svg#rating-clippath {
+  width: calc(100% - 60px);
+}
+@media (min-width:780px) {
+  #essentials .rating {
+    width: 40%;
+  }
+}
+/*** caroussel ***/
+.next,
+.prev {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid;
+  cursor: pointer;
+}
+.prev {
+  right: 60px;
+}
+.next:hover,
+.prev:hover {
+  background-color: var(--light-grey);
+}
+.next.disabled,
+.prev.disabled {
+  background-color: var(--white);
+}
+/*** guide ***/
+section#guide {
+  margin-bottom: 6rem;
+}
+#guide .flexContainer {
+  gap: 1.5rem;
+}
+#guide article {
+  flex: 1 1 100%;
+}
+#guide figure img {
+  height: 400px;
+  width: 100%;
+}
+@media (min-width: 780px) {
+  #guide article {
+    flex: 1 1 0;
+  }
 }
 /*** footer ***/
+footer {
+  background-color: var(--x-light-orange);
+  text-align: center;
+  padding: 6rem 2rem;
+}
