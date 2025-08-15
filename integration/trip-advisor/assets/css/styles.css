@@ -131,10 +131,12 @@ header nav ul.flexContainer {
   padding-top: 2rem;
   padding: 20px;
   justify-content: center;
-  transition: all 0.5s ease;
   visibility: hidden;
   opacity: 0;
   align-items: stretch;
+}
+.enable-transition {
+transition: all 0.5s ease;
 }
 header nav ul.flexContainer.active {
   visibility: visible;
@@ -213,6 +215,7 @@ label#burger input[type="checkbox"]:checked ~ span:nth-of-type(3) {
   width: 50%;
   transform: translate(24px, -4px) rotatez(45deg);
 }
+
 @media (min-width: 795px) {
   header nav {
     order: 0;
