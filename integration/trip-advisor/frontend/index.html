@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/8bdebcabe0.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/scripts/main.js" defer></script>
     <link rel="stylesheet" href="assets/css/font.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link href="assets/img/favicon-tripadvisor.svg" rel="shortcut icon">
+    <script src="https://kit.fontawesome.com/8bdebcabe0.js" crossorigin="anonymous"></script>
+    <script src="assets/scripts/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
   </head>
   <body>
     <header>
@@ -42,6 +40,9 @@
             <li><a href="" class="btn">Connectez-vous</a></li>
             <li>
               <a href=""><i class="icon-empty_cart"></i>Panier</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-email"></i>Contact</a>
             </li>
           </ul>
         </nav>
@@ -733,5 +734,17 @@
     <footer>
       <p><img src="assets/img/favicon-tripadvisor.svg" alt="">Made at Le Reacteur by Marty McFly</p>
     </footer>
+    <div class="form flexContainer">
+      <form class="flexContainer">
+        <legend>Formulaire de contact</legend>
+        <input type="text" name="firstname" placeholder="Prénom">
+        <input type="text" name="lastname" placeholder="Nom">
+        <input type="text" name="email" placeholder="Email">
+        <input type="text" name="subject" placeholder="Sujet">
+        <textarea name="message" rows="10" placeholder="Votre message ici..."></textarea>
+        <button>Envoyer le message</button>
+        <div class="circle">X</div>
+      </form>
+    </div>
   </body>
 </html>

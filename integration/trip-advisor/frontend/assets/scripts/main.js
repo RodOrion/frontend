@@ -8,12 +8,50 @@ burger.addEventListener("click", () => {
 window.addEventListener("resize", () => {
   nav.classList.remove("enable-transition");
 });
+
 /*** heart ***/
 let circlesLike = document.querySelectorAll("#essentials .circle");
 circlesLike.forEach((e) => {
   e.addEventListener("click", () => {
     e.classList.toggle("active");
   });
+});
+
+/*** Contact form ***/
+let btnContact = document.querySelector("header nav ul li:last-child");
+let close = document.querySelector("div.form form .circle");
+let containerForm = document.querySelector("div.form");
+let form = document.querySelector("form");
+
+btnContact.addEventListener("click", (e) => {
+  e.preventDefault();
+  containerForm.classList.add("active");
+});
+
+close.addEventListener("click", () => {
+  containerForm.classList.remove("active");
+});
+console.log(document.querySelector("form button"));
+
+document.querySelector("form button").addEventListener("click", () => {
+  console.log("ohé");
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  console.log("ohé");
+
+  const data = {
+    firstname: document.querySelector('form input[name="firstname"]').value,
+    lastname: document.querySelector('form input[name="lastname"]').value,
+    email: document.querySelector("form input[name='email']").value,
+    subject: document.querySelector("form input[name='subject']").value,
+    message: document.querySelector("form textarea").value,
+  };
+
+  console.log(data);
+  const response = await axios.post("http://localhost:3000/send_mail", data);
+  console.log(response);
 });
 
 /** caroussel ++ **/
