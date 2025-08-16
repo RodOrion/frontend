@@ -31,15 +31,9 @@ btnContact.addEventListener("click", (e) => {
 close.addEventListener("click", () => {
   containerForm.classList.remove("active");
 });
-console.log(document.querySelector("form button"));
-
-document.querySelector("form button").addEventListener("click", () => {
-  console.log("ohé");
-});
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log("ohé");
 
   const data = {
     firstname: document.querySelector('form input[name="firstname"]').value,

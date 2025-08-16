@@ -33,8 +33,16 @@ app.post("/send_mail", async (req,res) => {
             .setTo(recipient)
             .setReplyTo(sentFrom)
             .setSubject("ceci est l'objet du mail")
-            .setHtml(firstname + "<strong>" + message + "</strong>")
-            .setText(firstname + message);
+            .setHtml(`
+              <h2>Message de : ${firstname} ${lastname}</h2>
+              <strong>${message}</strong>
+              <p>email : ${email}</p>
+            `)
+            .setText(`
+              Message de : ${firstname} ${lastname}\n
+              ${message}\n
+              email : ${email}
+            `);
     
         const result = await mailserSend.email.send(emailParams);
     
